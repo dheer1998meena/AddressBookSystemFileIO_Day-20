@@ -145,16 +145,16 @@ namespace AddressBookSystemCollection
                 //second choice iteration of view all contacts
                 else if (choice == 2)
                 {
-                    //creating an object of ViewAddressBook and storing in list li
+                    //Creating an object of ViewAddressBook and storing in list li
                     List<Contact> li = ab.ViewAddressBook();
-                    //checking if the list is empty or not
+                    //Checking if the list is empty or not
                     if (li.Count == 0)
                     {
                         Console.WriteLine("The address book is empty.");
                     }
                     else
                     {
-                        //iterating each data of the list using foreach loop
+                        //Iterating each data of the list using foreach loop
                         foreach (Contact cl in li)
                         {
                             Console.WriteLine("Name : " + cl.GetName());
