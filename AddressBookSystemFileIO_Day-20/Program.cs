@@ -27,7 +27,7 @@ namespace AddressBookSystemCollection
                 Console.WriteLine("2. View all Contacts.");
                 Console.WriteLine("3.Edit existing contacts.");
                 Console.WriteLine("4.Remove a contact.");
-                Console.WriteLine("5.View AddressBook fora key name.");
+                Console.WriteLine("5.View AddressBook for a key name.");
                 Console.WriteLine("6.Search person by city/state name.");
                 Console.WriteLine("7.View persons by city.");
                 Console.WriteLine("8.View persons by state");
@@ -40,20 +40,20 @@ namespace AddressBookSystemCollection
                     Console.WriteLine("Enter your Name : ");
                     string name = Console.ReadLine();
                     //Regex for checking name
-                    Regex reg4 = new Regex(@"(^[a-z A-Z]*$)");
+                    Regex reg1 = new Regex(@"(^[a-z A-Z]*$)");
                     //if regex is not matching then asking for valid name
-                    while (!reg4.IsMatch(name))
+                    while (!reg1.IsMatch(name))
                     {
                         Console.WriteLine("Enter a valid name : ");
                         name = Console.ReadLine();
                     }
                     //checking for duplicate entry
-                    while (ab.UC7_CheckForDuplicateEntry(name))
+                    while (ab.CheckForDuplicateEntry(name))
                     {
                         Console.WriteLine("This name already exists in the address book.");
                         Console.WriteLine("Please enter a new name : ");
                         name = Console.ReadLine();
-                        while (!reg4.IsMatch(name))
+                        while (!reg1.IsMatch(name))
                         {
                             Console.WriteLine("Enter a valid name : ");
                             name = Console.ReadLine();
@@ -63,9 +63,9 @@ namespace AddressBookSystemCollection
                     Console.WriteLine("Enter your address : ");
                     string address = Console.ReadLine();
                     //regex for checking the address field
-                    Regex reg5 = new Regex(@"(^[a-z A-Z]*$)");
+                    Regex reg2 = new Regex(@"(^[a-z A-Z]*$)");
                     //if regex is not matching then asking for valid address
-                    while (!reg5.IsMatch(address))
+                    while (!reg2.IsMatch(address))
                     {
                         Console.WriteLine("Enter a valid address : ");
                         address = Console.ReadLine();
@@ -74,9 +74,9 @@ namespace AddressBookSystemCollection
                     Console.WriteLine("Enter your city : ");
                     string city = Console.ReadLine();
                     //regex to match city name
-                    Regex reg6 = new Regex(@"(^[a-z A-Z]*$)");
+                    Regex reg3 = new Regex(@"(^[a-z A-Z]*$)");
                     //if regex is not matching then asking for valid city name
-                    while (!reg6.IsMatch(city))
+                    while (!reg3.IsMatch(city))
                     {
                         Console.WriteLine("Enter a valid city name : ");
                         city = Console.ReadLine();
@@ -85,9 +85,9 @@ namespace AddressBookSystemCollection
                     Console.WriteLine("Enter your state : ");
                     string state = Console.ReadLine();
                     //regex to check the correct state name
-                    Regex reg7 = new Regex(@"(^[a-z A-Z]*$)");
+                    Regex reg4 = new Regex(@"(^[a-z A-Z]*$)");
                     //if regex is not matching then asking for the correct state name
-                    while (!reg7.IsMatch(state))
+                    while (!reg4.IsMatch(state))
                     {
                         Console.WriteLine("Enter a valid state name : ");
                         state = Console.ReadLine();
@@ -96,9 +96,9 @@ namespace AddressBookSystemCollection
                     Console.WriteLine("Enter your zip : ");
                     string zip = Console.ReadLine();
                     //regex to match the correct zip code format
-                    Regex reg = new Regex(@"(^[0-9]{6}$)");
+                    Regex reg5 = new Regex(@"(^[0-9]{6}$)");
                     //if zip code is not matching then asking for valid zip code
-                    while (!reg.IsMatch(zip))
+                    while (!reg5.IsMatch(zip))
                     {
                         Console.WriteLine("Enter a valid zip code : ");
                         zip = Console.ReadLine();
@@ -107,9 +107,9 @@ namespace AddressBookSystemCollection
                     Console.WriteLine("Enter your contact no. : ");
                     string contactNo = Console.ReadLine();
                     //regex code to match the correct contact number format
-                    Regex reg1 = new Regex(@"(^[7-9]{1}[0-9]{9}$)");
+                    Regex reg6 = new Regex(@"(^[7-9]{1}[0-9]{9}$)");
                     //if phone number doesn't matches then asking for valid number
-                    while (!reg1.IsMatch(contactNo))
+                    while (!reg6.IsMatch(contactNo))
                     {
                         Console.WriteLine("Enter a a valid mobile number : ");
                         contactNo = Console.ReadLine();
@@ -118,9 +118,9 @@ namespace AddressBookSystemCollection
                     Console.WriteLine("Enter your email : ");
                     string mailID = Console.ReadLine();
                     //regex code to match the email id 
-                    Regex reg2 = new Regex("^[0-9A-Za-z]+([+-_.][a-zA-Z]+)*[@][0-9A-Za-z]+[.][0-9A-Za-z]{2,3}$");
+                    Regex reg7 = new Regex("^[0-9A-Za-z]+([+-_.][a-zA-Z]+)*[@][0-9A-Za-z]+[.][0-9A-Za-z]{2,3}$");
                     //if the email id not matches with the regex pattern then asking for valid email id
-                    while (!reg2.IsMatch(mailID))
+                    while (!reg7.IsMatch(mailID))
                     {
                         Console.WriteLine("Enter a a valid emailID : ");
                         mailID = Console.ReadLine();
@@ -129,9 +129,9 @@ namespace AddressBookSystemCollection
                     Console.WriteLine("Enter the key name to be saved in the address book : ");
                     string keyname = Console.ReadLine();
                     //regex pattern to match the keyname
-                    Regex reg3 = new Regex("^[A-Z a-z]*$");
+                    Regex reg8 = new Regex("^[A-Z a-z]*$");
                     //if keyname doesn't matches then asking for a valid keyname
-                    while (!reg3.IsMatch(keyname))
+                    while (!reg8.IsMatch(keyname))
                     {
                         Console.WriteLine("Enter a valid name : ");
                         keyname = Console.ReadLine();
