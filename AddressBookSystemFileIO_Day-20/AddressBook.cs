@@ -49,6 +49,7 @@ namespace AddressBookSystemCollection
         }
         public List<Contact> ViewAddressBook()
         {
+            SortByName();
             return list;
         }
         //method to edit the contact details
