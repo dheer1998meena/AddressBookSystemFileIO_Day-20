@@ -93,7 +93,7 @@ namespace AddressBookSystemCollection
             }
         }
         //method to check for any duplicate entry 
-        public bool UC7_CheckForDuplicateEntry(string name)
+        public bool CheckForDuplicateEntry(string name)
         {
             foreach (Contact c in list)
             {
@@ -194,25 +194,12 @@ namespace AddressBookSystemCollection
             }
 
         }
-        //UC10-Count by city name
-        public void GetCountByCity()
-        {
-            Console.WriteLine("Enter a city name to get number of contacts within the location:");
-            string cityName = Console.ReadLine().ToUpper();
-            Console.WriteLine("\nNumber of contact persons present at {0}:", cityName);
-            /// CHECKS IF THE DICTIONARY ALREADY CONTAINS THE CITY/STATE
-            if (cityDictionary.ContainsKey(cityName))
-                ///DISPLAYS THE COUNT
-                Console.WriteLine(cityDictionary[cityName].Count);
-            else
-                Console.WriteLine(0);
-        }
-        // UC11 Ability to sorting  the entries in the address book alphabetically by Person's name
-        // sorting the list using Lambda Expression
+        
+        // UC11 Ability to sorting  the entries in the address book alphabetically by Person's name.
+        // sorting the list using Lambda Expression.
         public void SortByName()
         {
             list = list.OrderBy(c => c.GetName()).ToList();
-
         }
     }
 }
