@@ -209,12 +209,5 @@ namespace AddressBookSystemCollection
             }
 
         }
-        
-        // UC11 Ability to sorting  the entries in the address book alphabetically by Person's name.
-        // sorting the list using Lambda Expression.
-        public void SortByName()
-        {
-            list = list.OrderBy(c => c.GetName()).ToList();
-        }
     }
 }
