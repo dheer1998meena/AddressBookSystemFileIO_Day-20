@@ -145,8 +145,13 @@ namespace AddressBookSystemCollection
                 //second choice iteration of view all contacts
                 else if (choice == 2)
                 {
+                    Console.WriteLine("1. Sorting by name");
+                    Console.WriteLine("2. Sorting by city name");
+                    Console.WriteLine("3. Sorting by state name");
+                    Console.WriteLine("4. Sorting by Zip code");
+                    int input = Convert.ToInt32(Console.ReadLine());
                     //Creating an object of ViewAddressBook and storing in list li
-                    List<Contact> li = ab.ViewAddressBook();
+                    List<Contact> li = ab.ViewAddressBook(input);
                     //Checking if the list is empty or not
                     if (li.Count == 0)
                     {
