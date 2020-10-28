@@ -31,7 +31,8 @@ namespace AddressBookSystemCollection
                 Console.WriteLine("6.Search person by city/state name.");
                 Console.WriteLine("7.View persons by city.");
                 Console.WriteLine("8.View persons by state");
-                Console.WriteLine("9.Exit.");
+                Console.WriteLine("9.Print all contacts from text file.");
+                Console.WriteLine("10.Exit.");
                 choice = Convert.ToInt32(Console.ReadLine());
                 //Checking the choice entered by the user and iterating using for loop
                 if (choice == 1)
@@ -240,12 +241,17 @@ namespace AddressBookSystemCollection
                 {
                     ab.AddressByState();
                 }
+                // UC13 Ability to read and write the addressbook with person cotacts using File IO method.
+                else if (choice == 9)
+                {
+                    ab.WriteAllText();
+                }
                 else
                 {
                     break;
                 }
                 //exit
-            } while (choice != 9);
+            } while (choice != 10);
         }
     }
 }
