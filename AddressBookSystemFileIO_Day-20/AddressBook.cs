@@ -47,9 +47,24 @@ namespace AddressBookSystemCollection
             }
             return null;
         }
-        public List<Contact> ViewAddressBook()
+        public List<Contact> ViewAddressBook(int input)
         {
-            SortByName();
+            if(input == 1)
+            {
+                list = list.OrderBy(c => c.GetName()).ToList();
+            }
+            else if (input == 2)
+            {
+                list = list.OrderBy(c => c.GetCity()).ToList();
+            }
+            else if (input == 3)
+            {
+                list = list.OrderBy(c => c.GetState()).ToList();
+            }
+            if(input ==4) 
+            {
+                list = list.OrderBy(c => c.GetZip()).ToList();
+            }
             return list;
         }
         //method to edit the contact details
