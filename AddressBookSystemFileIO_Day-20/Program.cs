@@ -6,6 +6,7 @@
 // --------------------------------------------------------------------------------------------------------------------
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -142,6 +143,11 @@ namespace AddressBookSystemCollection
                     //adding the details into the method AddAddress
                     ab.AddAddress(keyname, c);
 
+                    string path = @"C:\Users\dheer1998meena\source\repos\AddressBookSystemFileIO_Day-20\AddressBookSystemFileIO_Day-20\Contact.txt";
+                    string text = "Name : " + name + "  Address : " + address + "  City : " + city + "  State : " + state + "  zip : " + zip + "  Contact No. : " + contactNo + "  Email ID : " + mailID + "\n";
+                    // Updating the text into the file path
+                    File.AppendAllText(path, text);
+
                 }
                 //second choice iteration of view all contacts
                 else if (choice == 2)
@@ -244,7 +250,22 @@ namespace AddressBookSystemCollection
                 // UC13 Ability to read and write the addressbook with person cotacts using File IO method.
                 else if (choice == 9)
                 {
-                    ab.WriteAllText();
+                    string path = @"C:\Users\dheer1998meena\source\repos\AddressBookSystemFileIO_Day-20\AddressBookSystemFileIO_Day-20\Contact.txt";
+                    if (File.Exists(path))
+                    {
+                        // Storing all the details of the contacts into a list
+                        List<Contact> li = ab.ViewAddressBook(1);
+                        foreach (Contact cc in li)
+                        {
+                            string text = "Name : " + cc.GetName() + "  Address : " + cc.GetAddress() + "  City : " + cc.GetCity() + "  State : " + cc.GetState() + "  zip : " + cc.GetZip() + "  Contact No. : " + cc.GetPhoneNo() + "  Email ID : " + cc.GetEmail() + "\n";
+                            // Writing data into the file
+                            File.WriteAllText(path, text);
+                        }
+
+                    }
+
+                    // Reading all text from the file
+                    ab.ReadAllText();
                 }
                 else
                 {

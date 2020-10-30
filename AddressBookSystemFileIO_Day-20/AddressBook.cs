@@ -214,44 +214,13 @@ namespace AddressBookSystemCollection
         /// <summary>
         ///UC13 Ability to read and write  the addressbook with person cotacts using File IO method.
         /// </summary>
-        public void WriteAllText()
-        {
-            //Creating a variable to assign file path.
-            string path = @"C:\Users\dheer1998meena\source\repos\AddressBookSystemFileIO_Day-20\AddressBookSystemFileIO_Day-20\Contact.txt";
-            // Checking file if it is exist or not.
-            if (File.Exists(path))
-            {
-                // Creating a obj that store the all written text at a once and a streamwritter that appends enodeed text to specified file or to be new file.
-                using (StreamWriter sw = File.AppendText(path))
-                {
-                    List<Contact> li = ViewAddressBook(1);
-                    //Iterating foreach loop to geting all details of person contact.
-                    foreach (Contact cc in li)
-                    {
-                        sw.Write("Name :" + cc.GetName() + "Address :" + cc.GetAddress() + "City :" + cc.GetCity() + "State :" + cc.GetState() + "Zip :" + cc.GetZip() + "Phone Number :" + cc.GetPhoneNo() + "Email :" + cc.GetEmail());
-
-                        Console.WriteLine();
-                    }
-
-                }
-                ReadAllText();
-            }
-
-        }
-        // Creating ReadAllText method.
         public void ReadAllText()
         {
-            //Creating a variable to assign file path.
-            string path = @"C:\Users\dheer1998meena\source\repos\SystemIo_rum\SystemIo_rum\Contact.txt";
-            // Checking file if it is exist or not.
-            if (File.Exists(path))
-            {
-                using (StreamReader sr = File.OpenText(path))
-                {
-                    Console.WriteLine(sr.ReadToEnd());
-                }
-
-            }
+            string path = @"C:\Users\dheer1998meena\source\repos\AddressBookSystemFileIO_Day-20\AddressBookSystemFileIO_Day-20\Contact.txt";
+            string lines;
+            // Reading all lines from the file
+            lines = File.ReadAllText(path);
+            Console.WriteLine(lines);
 
         }
     }
